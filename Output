@@ -1,0 +1,19 @@
+const modifier = (text) => {
+  text = LivingCharactersWithInnerSelf("output", text);
+
+  if (!state.morningNewsShown) {
+    const news = getMutantLifeMorningNews();
+
+    state.morningNewsShown = true;
+    state.morningNews = news;
+
+    text =
+      `The television drones quietly in the background.\n\n` +
+      `"${news}"\n\n` +
+      text;
+  }
+
+  return { text };
+};
+
+modifier(text);
